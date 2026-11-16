@@ -1,6 +1,6 @@
-# Viznova ,  data visualization learning app
+# Viznova
 
-Viznova is a static, browser-based learning app for understanding how to design, select, interpret and communicate effective data visualizations. It includes Plotly examples in R, Python (pandas and Polars), and JavaScript as implementation references.
+Viznova is a browser-based learning app for understanding how to design, select, interpret and communicate effective data visualizations. It includes Plotly examples in R, Python (pandas and Polars), and JavaScript as implementation references.
 
 ## Run locally
 
