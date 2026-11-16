@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-font-scale="medium">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Learn visualization foundations, chart selection, communication and implementation.">
+<title>Viznova | Data visualization learning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261116-6">
+<script src="https://cdn.plot.ly/plotly-4.2.0.min.js" defer></script>
+<script src="assets/js/preferences.js?v=20261116-6" defer></script>
+
+</head>
+<body class="learning-body">
+<a class="skip-link" href="#lesson-main">Skip to lesson content</a>
+<header class="app-header">
+  <a class="brand" href="index.html" aria-label="Viznova home">Viznova</a>
+  <span id="header-current-section" class="sr-only" aria-live="polite"></span>
+  <div class="display-controls" aria-label="Display preferences">
+    <button class="icon-button" type="button" data-theme-toggle aria-label="Switch to dark mode"><span data-theme-icon aria-hidden="true">☾</span></button>
+    <label class="sr-only" for="font-scale-app">Text size</label>
+    <select id="font-scale-app" class="font-select" data-font-scale aria-label="Text size"><option value="small">Small</option><option value="medium" selected>Medium</option><option value="large">Large</option></select>
+  </div>
+</header>
+<div class="app-layout">
+  <aside class="sidebar" aria-label="Curriculum navigation">
+    <div class="sidebar-top">
+      <label class="sr-only" for="lesson-search">Search lessons</label>
+      <input id="lesson-search" class="lesson-search" type="search" placeholder="Search curriculum" autocomplete="off">
+    </div>
+    <nav id="course-nav" class="course-nav" aria-label="Curriculum"></nav>
+  </aside>
+  <main id="lesson-main" class="lesson-main" tabindex="-1"><div id="lesson-content"><section class="module-status" id="module-status" role="status" aria-live="polite"><h1>Loading learning content</h1><p>Viznova is preparing the curriculum and interactive chart lessons.</p></section></div></main>
+  <aside class="lesson-outline" aria-label="On this page"><h2>On this page</h2><nav id="lesson-outline-links"></nav></aside>
+</div>
+<div id="app-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+<script type="module">
+  import('./assets/js/app.js?v=20261116-6').catch((error) => {
+    const host = document.getElementById('lesson-content');
+    if (!host) return;
+    const section = document.createElement('section');
+    section.className = 'module-status module-error';
+    section.setAttribute('role', 'alert');
+    const heading = document.createElement('h1');
+    const message = document.createElement('p');
+    const action = document.createElement('p');
+    heading.textContent = 'Viznova could not open the learning area';
+    message.textContent = 'Refresh this page to try again.';
+    if (location.protocol === 'file:') {
+      action.textContent = 'Start Viznova with the included start-viznova.command file, or run python3 -m http.server 8000 from the extracted application folder and open http://localhost:8000/learn.html.';
+    } else {
+      action.textContent = 'If the problem continues, stop the local server, start it again from the newly extracted Viznova folder, and reload this page.';
+    }
+    section.append(heading, message, action);
+    host.replaceChildren(section);
+    console.error('Viznova learning application initialization failed:', error);
+  });
+</script>
+</body>
+</html>

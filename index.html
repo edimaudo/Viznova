@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-font-scale="medium">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Learn to choose, design and communicate effective data visualizations.">
+<title>Viznova | Better data visualization</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261116-6">
+<script src="https://cdn.plot.ly/plotly-4.2.0.min.js" defer></script>
+<script src="assets/js/preferences.js?v=20261116-6" defer></script>
+<script src="assets/js/landing.js?v=20261116-6" defer></script>
+</head>
+<body class="landing-body">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Viznova home">Viznova</a>
+  <div class="display-controls" aria-label="Display preferences">
+    <button class="icon-button" type="button" data-theme-toggle aria-label="Switch to dark mode"><span data-theme-icon aria-hidden="true">☾</span></button>
+    <label class="sr-only" for="font-scale">Text size</label>
+    <select id="font-scale" class="font-select" data-font-scale aria-label="Text size">
+      <option value="small">Small</option><option value="medium" selected>Medium</option><option value="large">Large</option>
+    </select>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="hero shell">
+    <div class="hero-copy">
+      <h1>Learn to build better data visualizations.</h1>
+      <p class="hero-lede">Choose the right visual, design it for clarity, and communicate what the data means.</p>
+      <div class="hero-actions"><a class="button button-primary" href="learn.html">Explore Viznova <span aria-hidden="true">→</span></a></div>
+    </div>
+    <div class="hero-visual">
+      <div class="visual-window">
+        <div class="visual-window-top"><p>Monthly revenue</p></div>
+        <div id="landing-chart" class="landing-chart" role="img" aria-label="Illustrative line chart showing revenue rising over six months, with a small decline in April."></div>
+        <div class="visual-window-foot"><span class="legend-dot"></span><span>Revenue</span><span class="visual-window-note">Illustrative data</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section shell learning-pillars" aria-labelledby="learn-heading">
+    <div class="section-heading">
+      <div><h2 id="learn-heading">What you will learn</h2></div>
+    </div>
+    <div class="learning-cards">
+      <article class="learning-card"><h3>Design with intent</h3><p>Use perception, color, typography and accessibility to make information clear.</p></article>
+      <article class="learning-card"><h3>Choose the right visual</h3><p>Match the chart to the question, data structure and analytical task.</p></article>
+      <article class="learning-card"><h3>Communicate clearly</h3><p>Explain findings to technical and non-technical audiences.</p></article>
+      <article class="learning-card"><h3>Read charts critically</h3><p>Understand chart strengths, limitations and common ways visuals mislead.</p></article>
+      <article class="learning-card"><h3>Put ideas into practice</h3><p>Explore implementations in R, Python and JavaScript.</p></article>
+    </div>
+  </section>
+</main>
+</body>
+</html>
