@@ -89,12 +89,3 @@ The curriculum uses original explanations, examples and implementation patterns.
 Open the learning application through the local server at `http://localhost:8000/learn.html`, not by double-clicking `learn.html`. The page now shows a startup message while its curriculum modules load, provides a screen-reader-only current-section target for compatibility with cached lesson scripts, cache-busts the application entry module, and displays actionable instructions if module loading fails. If the error persists while using the local server, confirm that `assets/js/app.js`, `assets/js/content.js`, `assets/js/charting.js`, `assets/js/csv.js`, and `assets/css/styles.css` are present in the extracted folder.
 
 The Viznova wordmark is text-only. The light/dark theme button and text-size selector use matched fixed heights at desktop and mobile breakpoints.
-
-
-## Build 20261116-6
-
-This build versions all first-party CSS and JavaScript URLs to prevent browsers from
-reusing modules from an earlier extraction. The charting module is loaded as a namespace,
-with a built-in dark-palette fallback so an older charting module cannot fail module linking
-just because it does not export `chartPalettesDark`. Learner-facing startup errors are concise;
-diagnostic details are kept in the browser developer console.
